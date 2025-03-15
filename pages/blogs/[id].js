@@ -1,52 +1,73 @@
-import { blogdata } from "@/assets/data/dummydata"
-import Banner from "@/components/Banner"
-import { Title, TitleSm } from "@/components/common/Title"
-import Head from "next/head"
-import { useRouter } from "next/router"
-import React from "react"
+import { blogdata } from "@/assets/data/dummydata";
+import Banner from "@/components/Banner";
+import { Title, TitleSm } from "@/components/common/Title";
+import Head from "next/head";
+import React from "react";
 
-const SinglePost = () => {
-  const router = useRouter()
-  const { id } = router.query
-  const post = blogdata.find((post) => post.id === parseInt(id))
+// ✅ This component no longer depends on `useRouter`
+const SinglePost = ({ post }) => {
+  if (!post) {
+    return <p>Post not found</p>;
+  }
 
   return (
     <>
       <Head>
         <title>{post.title}</title>
       </Head>
-      <section className='post-details bg-top'>
-        <div className='container'>
-          <div className='heading-title'>
-            <TitleSm title='TIPS & TRICKS / JANUARY 12, 2022' /> <br />
+      <section className="post-details bg-top">
+        <div className="container">
+          <div className="heading-title">
+            <TitleSm title="TIPS & TRICKS / JANUARY 12, 2022" />
             <br />
-            <Title title={post.title} className='title-bg' />
-            <div className='img py'>
-              <img src={post.cover} alt={post.title} width='100%' height='100%' className='round' />
+            <br />
+            <Title title={post.title} className="title-bg" />
+            <div className="img py">
+              <img
+                src={post.cover}
+                alt={post.title}
+                width="100%"
+                height="100%"
+                className="round"
+              />
             </div>
-            <div className='desc'>
-              <TitleSm title='Phasellus at magna - elit tristique lacinia. Integer a justo vitae arcu fermentum consequat.' />
-              <p className='desc-p'> Nulla iaculis convallis fermentum. Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper. Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
-              <p className='desc-p'>Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper.</p>
-              <p className='desc-p'>Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
+            <div className="desc">
+              <TitleSm title="Phasellus at magna - elit tristique lacinia." />
+              <p className="desc-p">
+                Nulla iaculis convallis fermentum...
+              </p>
             </div>
           </div>
           <Banner />
-
-          <div className='heading-title'>
-            <div className='desc'>
-              <TitleSm title='Integer a justo vitae arcu fermentum...' />
-
-              <p className='desc-p'> Phasellus nec tempor neque. In nec finibus lorem, in aliquet risus. Proin elit elit, cursus vel vulputate at, volutpat quis metus. Praesent at blandit tellus.</p>
-              <p className='desc-p'>Morbi finibus velit erat, a pulvinar lacus mollis sit amet. Nulla iaculis convallis fermentum. Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper! Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
-              <p className='desc-p'>Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper.</p>
-              <p className='desc-p'>Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
-            </div>
-          </div>
         </div>
       </section>
     </>
-  )
+  );
+};
+
+export default SinglePost;
+
+// ✅ This function fetches data for a specific post at build time
+export async function getStaticProps({ params }) {
+  const post = blogdata.find((p) => p.id === parseInt(params.id));
+
+  if (!post) {
+    return { notFound: true };
+  }
+
+  return {
+    props: { post },
+  };
 }
 
-export default SinglePost
+// ✅ This function generates all possible blog post paths at build time
+export async function getStaticPaths() {
+  const paths = blogdata.map((post) => ({
+    params: { id: post.id.toString() }, // Convert `id` to string for URL
+  }));
+
+  return {
+    paths,
+    fallback: false, // `false` ensures only defined paths are built
+  };
+}
