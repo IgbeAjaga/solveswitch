@@ -256,23 +256,13 @@ footer {
     margin-top: $xll;
     h1 {
       font-size: $xl-6;
-    }    
+    }
     .box {
-      max-width: 90; /* Reduce width slightly */
-      padding: 15px; /* Reduce padding to fit better */
-      text-align: center;
-    }
-    
-    .box h1 {
-      font-size: 50px; /* Reduce font size */
-      font-weight: 400;
-      gap: 5px;
-    }
-    
-    .box h3 {
-      gap: 5px; 
-    }
-    
+      h1 {
+        font-size: 60px;
+        font-weight: 400;
+      }
+    }    
     .misson-p {
       border-left: 5px solid $indigo;
       padding-left: $xl-5;
