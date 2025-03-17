@@ -34,8 +34,9 @@
 // Ensure full display on smaller screens
 @media screen and (max-width: 800px) {
   .hero {
-    min-height: 100vh !important; // Ensure full height on mobile
-    padding: 50px 20px;
+    min-height: auto !important; // Ensure full height on mobile
+    padding: 30px 20px !important;
+    gap: 10px; //
     overflow: visible !important;
     display: flex;
     flex-direction: column;
