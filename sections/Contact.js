@@ -93,7 +93,7 @@ const Contact = () => {
                   <br />
                   <span>
                     Call us: <br />
-                    <br /> Mon - Sat <br />
+                    <br /> Mon - <br/><br/>Sat <br />
                     <br /> 9:00am - <br /><br /> 06:00pm
                   </span>
                 </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                   <FiHelpCircle size={30} className="icons" />
                   <h3>info@solveswitch.com</h3>
                   <br />
-                  <span>Drop us a <br /><br />line <br /><br />anytime!</span>
+                  <span>Drop us <br /><br />a line <br /><br />anytime!</span>
                 </div>
               </div>
               <ul>
