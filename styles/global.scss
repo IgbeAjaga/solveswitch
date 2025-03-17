@@ -256,14 +256,9 @@ footer {
     margin-top: $xll;
     h1 {
       font-size: $xl-6;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Smaller boxes */
-      gap: 15px; /* Reduce space between boxes */
     }    
     .box {
-      max-width: 90%; /* Reduce width slightly */
+      max-width: auto; /* Reduce width slightly */
       padding: 15px; /* Reduce padding to fit better */
       text-align: center;
     }
