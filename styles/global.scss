@@ -156,6 +156,7 @@
 
 //brand
 .brand-content {
+  gap: 10px; // Reduce space between elements
   img {
     opacity: 0.5;
     transition: 0.5s ease-in-out;
@@ -260,6 +261,11 @@ footer {
       h1 {
         font-size: 60px;
         font-weight: 400;
+      }
+      h3 {
+        word-wrap: break-word; /* Breaks long words */
+  white-space: normal; /* Ensures wrapping */
+       
       }
     }
     .misson-p {
