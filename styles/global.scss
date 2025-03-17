@@ -257,12 +257,28 @@ footer {
     h1 {
       font-size: $xl-6;
     }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
+      gap: 10px; /* Reduce spacing */
+      max-width: 100%; /* Prevent overflow */
+      padding: 0 10px; /* Add some padding to prevent edge overflow */
+      overflow: hidden;
+    }
+    
     .box {
-      h1 {
-        font-size: 60px;
-        font-weight: 400;
-      }
-    }    
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%; /* Prevents content from exceeding the box */
+    }
+    
+    .box h3 {
+      font-size: 16px; /* Adjust font size for smaller screens */
+      line-height: 1.2; /* Ensure proper spacing */
+    }
+    
+    
     .misson-p {
       border-left: 5px solid $indigo;
       padding-left: $xl-5;
