@@ -277,6 +277,12 @@ footer {
       font-size: 16px; /* Adjust font size for smaller screens */
       line-height: 1.2; /* Ensure proper spacing */
     }
+    @media screen and (max-width: 600px) {
+      .grid-3 {
+        grid-template-columns: 1fr; /* Stack boxes on very small screens */
+        text-align: center;
+      }
+    }
     
     
     .misson-p {
