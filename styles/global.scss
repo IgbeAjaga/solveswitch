@@ -266,13 +266,11 @@ footer {
     .box h1 {
       font-size: 50px; /* Reduce font size */
       font-weight: 400;
+      gap: 15px;
     }
     
-    .box h3 {      
-      word-wrap: break-word; /* Breaks long words */
-      white-space: normal; /* Ensures wrapping */
-      margin: 0 auto; /* Centers text */
-  max-width: 100%; /* Prevents overflow */
+    .box h3 {
+      gap: 15px; 
     }
     
     .misson-p {
