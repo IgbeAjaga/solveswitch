@@ -258,16 +258,22 @@ footer {
       font-size: $xl-6;
     }
     .box {
-      h1 {
-        font-size: 60px;
-        font-weight: 400;
-      }
-      h3 {
-        word-wrap: break-word; /* Breaks long words */
-  white-space: normal; /* Ensures wrapping */
-       
-      }
+      max-width: 90%; /* Reduce width slightly */
+      padding: 15px; /* Reduce padding to fit better */
+      text-align: center;
     }
+    
+    .box h1 {
+      font-size: 50px; /* Reduce font size */
+      font-weight: 400;
+    }
+    
+    .box h3 {
+      font-size: 18px; /* Reduce h3 size slightly */
+      word-wrap: break-word; /* Breaks long words */
+      white-space: normal; /* Ensures wrapping */
+    }
+    
     .misson-p {
       border-left: 5px solid $indigo;
       padding-left: $xl-5;
