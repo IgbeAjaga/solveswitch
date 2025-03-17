@@ -53,15 +53,15 @@ const Agency = () => {
               <div className='grid-3'>
                 <div className='box'>
                   <h5 className='green'>Unique</h5>
-                  <h3>Modern technologies</h3>
+                  <h4>Modern technologies</h4>
                 </div>
                 <div className='box'>
                   <h5 className='green'>Many</h5>
-                  <h3>Successful cases</h3>
+                  <h4>Successful cases</h4>
                 </div>
                 <div className='box'>
                   <h5 className='green'>Clear</h5>
-                  <h3>Client focus</h3>
+                  <h4>Client focus</h4>
                 </div>
               </div>
             </div>
