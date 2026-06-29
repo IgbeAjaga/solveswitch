@@ -83,10 +83,10 @@ const Contact = () => {
               <div className="contact-details">
                 <div className="box">
                 <h3>
-  <Link href="tel:+2349122553157" legacyBehavior>
+  <Link href="tel:+2348166517663" legacyBehavior>
     <a style={{ textDecoration: "none", color: "inherit", display: "flex", alignItems: "center" }}>
       <FiPhone size={20} style={{ marginRight: "8px" }} className="icons" />
-      +234 912 255 3157
+      +234 816 651 7663
     </a>
   </Link>
 </h3>
