@@ -167,7 +167,7 @@ export const testimonial = [
   },
 ];
 
-export const showcase = [
+export const portfolio = [
   {
     id: 1,
     title: "Real Estate",
