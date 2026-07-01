@@ -15,7 +15,7 @@ const Services = () => {
       <section className='agency bg-top'>
         <div className='container'>
           <div className='heading-title'>
-            <TitleSm title='SERVICES' /> <br />
+            <TitleSm title='WE CAN OFFER YOU' /> <br />
             <br />
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
   <Title title="Unique technologies & modern approach" className="title-bg" />

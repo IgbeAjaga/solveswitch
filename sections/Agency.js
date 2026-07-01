@@ -19,10 +19,10 @@ const Agency = () => {
       <section className='agency bg-top'>
         <div className='container'>
           <div className='heading-title'>
-            <TitleSm title='ABOUT SOLVESWITCH' /> <br />
+            <TitleSm title='LEARN MORE ABOUT US' /> <br />
             <br />
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <Title title='The digital agency that you need!' className='title-bg' />
+            <Title title='We are the digital agency that you need!' className='title-bg' />
             </motion.div>
           </div>
           

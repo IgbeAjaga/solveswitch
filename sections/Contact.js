@@ -72,7 +72,7 @@ const Contact = () => {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
   >
-    <TitleSm title="CONTACT" />
+    <TitleSm title="CONTACT US" />
     <br />
     <br />
     <Title title="Let's start right now!" className="title-bg" />
